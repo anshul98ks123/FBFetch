@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FBfetch</title>
+    <meta name="theme-color" content="#00897b">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/jquery-3.2.1.js"></script>
+    <script src="/js/materialize.min.js"></script>
+</head>
+<body>
+
+<div id="animation">
+    <div class="outer">
+        <div class="box"><i class="fa fa-facebook-official" aria-hidden="true"></i></div>
+    </div>
+</div>
+
+<div id="box2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="content">
+                    <h1>FBfetch</h1>
+                    <a href='#modal' id='trigger' class="tooltipped" data-position="right" data-delay="50" data-tooltip="Click for more info">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    </a>
+                    <h3>App to fetch posts from CSI NSIT Facebook page</h3>
+                    <hr><br>
+                    <a href='/auth/facebook' class="btn btn-default btn-lg blue darken-4">
+                        <i class="fa fa-facebook-square white-text" aria-hidden="true"></i>
+                        {{#if currentUser}}
+                            Continue as {{currentUser._json.first_name}} {{currentUser._json.last_name}}
+                        {{else}}
+                            Login via Facebook
+                        {{/if}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h4 class="teal-text text-darken-2">About</h4>
+        <hr>
+        <ol class="red-text text-darken-1 text">
+            <li><i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;Authentication via Facebook</li>
+            <li><i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;Fetches posts from fb page of csi nsit</li>
+            <li><i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;Stores all posts in a DB</li>
+            <li><i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;Displays the posts according to number of likes and shares</li>
+        </ol>
+        <hr>
+        <p class="center teal-text">
+            <i class="fa fa-code" aria-hidden="true"></i>
+            Coded by Anshul Kumar Singh
+            <i class="fa fa-laptop" aria-hidden="true"></i>
+        </p>
+    </div>
+</div>
+
+<script>
+    window.onload = setTimeout(function() {
+        document.getElementById("animation").remove();
+        document.querySelector("#box2").classList.add("animate");
+    },1200);
+    $('#trigger').click(function () {
+        $('#modal').modal();
+    });
+</script>
+</body>
+</html>
+

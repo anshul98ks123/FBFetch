@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FBfetch</title>
+    <meta name="theme-color" content="#00897b">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/posts.css">
+    <script src="/js/jquery-3.2.1.js"></script>
+    <script src="/js/materialize.min.js"></script>
+</head>
+<body>
+
+<div id="box2">
+    <div class="navbar-fixed">
+        <nav class="nav-extended teal lighten-1">
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo">FBfetch</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href='#modal' id="trigger">About</a></li>
+                    <li><a data-beloworigin="true" class='dropdown-button' data-activates='dropdown1'>Signed in as {{currentUser._json.first_name}} {{currentUser._json.last_name}}</a></li>
+                </ul>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="/auth/facebook/logout">Logout</a></li>
+                </ul>
+            </div>
+            <div class="nav-content">
+                <a href="/auth/facebook/logout" class="btn-floating btn-large halfway-fab cyan darken-3 tooltipped" data-position="bottom" data-delay="20" data-tooltip="Logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <ul class="side-nav" id="mobile-demo">
+        <li><a href='#modal' id="trigger2">About</a></li>
+        <li><a>Signed in as {{currentUser._json.first_name}} {{currentUser._json.last_name}}</a></li>
+    </ul>
+
+    <div class="col s12 center" id="pageTop">
+        <div class="card blue-grey darken-1" id="jumbotron">
+            <div class="card-content white-text">
+                <br>
+                <span> CSI NSIT Posts </span>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row posts">
+            {{#each posts as |post|}}
+                <div class="col s12 m6 xl4">
+                    <div class="card">
+                        <div class="card-content">
+                        <span class="card-title activator">
+                            <i class="fa fa-ellipsis-v right activator" aria-hidden="true"></i>
+                            <img height="32px" width="32px" src="http://www.nsit.ac.in/static/images/societies/CSI.jpg">
+                            {{post.story}}
+                        </span>
+                            <p>{{post.content}}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">Likes: {{post.likes}}</a>
+                            <a href="#">Shares: {{post.shares}}</a>
+                            <a href="#">{{post.created}}</a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">{{post.story}}<i class="fa fa-times right" aria-hidden="true"></i></span>
+                            <p>{{post.content}}</p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h4 class="teal-text text-darken-2">About</h4>
+        <hr>
+        <ol class="red-text text-darken-1 text">
+            <li><i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;Authentication via Facebook</li>
+            <li><i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;Fetches posts from fb page of csi nsit</li>
+            <li><i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;Stores all posts in a DB</li>
+            <li><i class="fa fa-check" aria-hidden="true"></i> &nbsp;&nbsp;Displays the posts according to number of likes and shares</li>
+        </ol>
+        <hr>
+        <p class="center teal-text">
+            <i class="fa fa-code" aria-hidden="true"></i>
+            Coded by Anshul Kumar Singh
+            <i class="fa fa-laptop" aria-hidden="true"></i>
+        </p>
+    </div>
+</div>
+
+<footer class="page-footer teal">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">FBfetch</h5>
+                <p class="grey-text text-lighten-4">App to fetch posts from CSI NSIT Facebook page</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="auth/facebook/logout">Logout</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#pageTop">Back to Top</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2017 Copyright Text
+            <span class="grey-text text-lighten-4 right" href="#!">
+                <i class="fa fa-code" aria-hidden="true"></i>
+                Coded by Anshul Kumar Singh
+            </span>
+        </div>
+    </div>
+</footer>
+
+<div id="animation">
+    <div class="outer">
+        <div class="box s1"></div>
+        <div class="box s2"></div>
+        <div class="box s3"></div>
+        <div class="box s4"></div>
+        <div class="box s5"></div>
+        <div class="box s6"></div>
+        <div class="box s7"></div>
+        <div class="box s8"></div>
+        <div class="box s9"></div>
+    </div>
+</div>
+
+<script>
+    $(".button-collapse").sideNav();
+    $('#trigger').click(function () {
+        $('#modal').modal();
+    });
+    $('#trigger2').click(function () {
+        $('#modal').modal();
+    });
+    window.onload = setTimeout(function() {
+        document.getElementById("animation").remove();
+        document.querySelector("#box2").classList.add("animate");
+    },900);
+</script>
+</body>
+</html>

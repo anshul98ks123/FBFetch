@@ -1,0 +1,158 @@
+html, .container{
+    height: 100%;
+}
+
+body{
+    background: url(http://jonvilma.com/images/blue-10.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+#content{
+    text-align: center;
+    padding-top: 22%;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+    color:#e3f2fd ;
+}
+
+h1{
+    font-weight: 700;
+    font-size: 50px;
+}
+
+h3{
+    font-size: 30px;
+}
+
+.btn{
+    padding: 5px 10px;
+    height: auto;
+}
+
+.btn-lg{
+    font-size: 23px;
+    text-transform: capitalize;
+}
+
+.btn-lg i{
+    font-size: 24px;
+}
+
+#content hr{
+    width:400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0,2);
+}
+
+.card .card-content p {
+    max-height: 100px;
+    text-overflow: ellipsis;
+}
+
+h1{
+    display: inline;
+}
+
+#trigger{
+    color: #e3f2fd;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+#modal ol{
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+#modal li, #modal p{
+    font-size: 18px;
+}
+
+#modal hr{
+    border-top: 1px solid teal;
+}
+
+/*Loading Animation*/
+.animate{
+    animation: fade 0.5s ease-in-out;
+    display: block !important;
+}
+
+#box2{
+    display: none;
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+        position: relative;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#animation{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #365899;
+}
+
+.box{
+    margin: 18% 43%;
+    width: 200px;
+    height: 200px;
+    float: left;
+    color: white;
+    background-color: #365899;
+    animation: loader 0.4s 4 ease-in-out;
+    text-align: center;
+}
+
+.fa-facebook-official{
+    color: white;
+    font-size: 200px;
+}
+
+.box{
+    line-height:inherit;
+    animation-delay: 0.1s;
+}
+
+@keyframes loader {
+    0%{
+        transform: scale3d(1,1,1);
+    }
+    25%{
+        transform: scale3d(0.9,0.9,1) rotate(-10deg);
+    }
+    50%{
+        opacity: 0.1;
+        transform: scale3d(1.1,1.1,1);
+    }
+    75%{
+        transform: scale3d(0.9,0.9,1) rotate(10deg);
+    }
+    100%{
+        transform: scale3d(1,1,1);
+    }
+}
+
+@media (max-width: 576px){
+    .outer{
+        height: 100px;
+        width: 100px;
+        margin: 50% 14%;
+    }
+    .fa-facebook-official{
+        font-size: 140px;
+    }
+}

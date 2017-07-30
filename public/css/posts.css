@@ -1,0 +1,145 @@
+body{
+    background: #e0e0e0;
+}
+
+#jumbotron{
+    position: relative;
+    top: -7px;
+    font-family: Roboto,sans-serif;
+    font-weight: 200;
+    color: #fff;
+    font-size: 45px;
+    text-transform: uppercase;
+    background: linear-gradient(19deg, rgba(43, 88, 118, 0.1) 25%, rgb(43, 88, 118) 100%);
+}
+
+.posts .card{
+    transition: all 0.4s cubic-bezier(.66,.32,.24,.85);
+}
+
+.card .card-content{
+    padding-bottom: 0;
+}
+
+.activator i{
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.posts{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.posts .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.14), 0 6px 15px 0 rgba(0, 0,0, 0.12), 0 7px 5px -2px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(.66,.32,.24,.85);
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating){
+    color: teal;
+}
+
+.posts .card .card-content p{
+    height: 220px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#modal ol{
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+#modal li, #modal p{
+    font-size: 18px;
+}
+
+#modal hr{
+    border-top: 1px solid teal;
+}
+
+/*Loading Animation*/
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+        position: relative;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#animation{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1abc9c;
+}
+
+.box{
+    width: 33%;
+    height: 33%;
+    float: left;
+    background-color: white;
+    animation: loader 0.3s 3 ease-in-out;
+}
+
+.outer{
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin: 18% auto;
+}
+
+@keyframes loader {
+    0%,70%{
+        transform: scale3d(1,1,1);
+    }
+    35%{
+        transform: scale3d(0,0,1);
+        opacity: 0.1;
+    }
+    100%{
+        transform: scale3d(1,1,1);
+    }
+}
+
+.s7{
+    animation-delay: 0.05s;
+}
+.s4,.s8{
+    animation-delay: 0.1s;
+}
+.s1,.s5,.s9{
+    animation-delay: 0.15s;
+}
+.s2,.s6{
+    animation-delay: 0.2s;
+}
+.s3{
+    animation-delay: 0.25s;
+}
+
+.animate{
+    animation: fade 0.5s ease-in-out;
+    display: block !important;
+}
+
+#box2{
+    display: none;
+}
+
+@media (max-width: 576px){
+    .outer{
+        height: 100px;
+        width: 100px;
+        margin: 60% auto;
+    }
+}
