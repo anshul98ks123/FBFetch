@@ -14,37 +14,52 @@
 </head>
 <body>
 
+<!--LOADING ANIMATION-->
 <div id="animation">
     <div class="outer">
         <div class="box"><i class="fa fa-facebook-official" aria-hidden="true"></i></div>
     </div>
 </div>
 
+<!--CONTENT OF THE PAGE-->
 <div id="box2">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+
                 <div id="content">
+                    <!--HEADING-->
                     <h1>FBfetch</h1>
                     <a href='#modal' id='trigger' class="tooltipped" data-position="right" data-delay="50" data-tooltip="Click for more info">
                         <i class="fa fa-info-circle" aria-hidden="true"></i>
                     </a>
+
+                    <!--DESCRIPTION-->
                     <h3>App to fetch posts from CSI NSIT Facebook page</h3>
                     <hr><br>
+
+                    <!--LOGIN BUTTON-->
                     <a href='/auth/facebook' class="btn btn-default btn-lg blue darken-4">
+                        <!--FB ICON-->
                         <i class="fa fa-facebook-square white-text" aria-hidden="true"></i>
+
+                        <!--IF USER IS ALREADY LOGGED INTO APP, THEN IT SHOWS CONTINUE BUTTON-->
                         {{#if currentUser}}
                             Continue as {{currentUser._json.first_name}} {{currentUser._json.last_name}}
+                        <!--OTHERWISE IT SHOWS LOGIN BUTTON-->
                         {{else}}
                             Login via Facebook
                         {{/if}}
+
                     </a>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
 
+<!--INFO MODAL TRIGGERED WHEN CLICKED ON INFO ICON WHICH IS PLACED TO THE RIGHT OF THE HEADING-->
 <div id="modal" class="modal">
     <div class="modal-content">
         <h4 class="teal-text text-darken-2">About</h4>
@@ -65,10 +80,13 @@
 </div>
 
 <script>
+    // SCRIPT FOR TRANSITION FROM END OF LOADING ANIMATION TO DISPLAYING PAGE
     window.onload = setTimeout(function() {
         document.getElementById("animation").remove();
         document.querySelector("#box2").classList.add("animate");
     },1200);
+
+    // SCRPT FOR TRIGGERING MODAL
     $('#trigger').click(function () {
         $('#modal').modal();
     });

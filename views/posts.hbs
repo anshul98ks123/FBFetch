@@ -13,20 +13,41 @@
 </head>
 <body>
 
+<!--LOADING ANIMATION-->
+<div id="animation">
+    <div class="outer">
+        <div class="box s1"></div>
+        <div class="box s2"></div>
+        <div class="box s3"></div>
+        <div class="box s4"></div>
+        <div class="box s5"></div>
+        <div class="box s6"></div>
+        <div class="box s7"></div>
+        <div class="box s8"></div>
+        <div class="box s9"></div>
+    </div>
+</div>
+
+<!--CONTENT OF THE PAGE-->
 <div id="box2">
+
+    <!--NAVBAR-->
     <div class="navbar-fixed">
         <nav class="nav-extended teal lighten-1">
             <div class="nav-wrapper container">
                 <a href="#!" class="brand-logo">FBfetch</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                <!--LIST OF NAVBAR LINKS FOR DESKTOP MODE-->
                 <ul class="right hide-on-med-and-down">
                     <li><a href='#modal' id="trigger">About</a></li>
                     <li><a data-beloworigin="true" class='dropdown-button' data-activates='dropdown1'>Signed in as {{currentUser._json.first_name}} {{currentUser._json.last_name}}</a></li>
                 </ul>
+                <!--DROPDOWN TRIGGERED WHEN CLICKED ON SECOND LINK OF NAVBAR-->
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><a href="/auth/facebook/logout">Logout</a></li>
                 </ul>
             </div>
+            <!--LOGOUT ICON-->
             <div class="nav-content">
                 <a href="/auth/facebook/logout" class="btn-floating btn-large halfway-fab cyan darken-3 tooltipped" data-position="bottom" data-delay="20" data-tooltip="Logout">
                     <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -35,11 +56,13 @@
         </nav>
     </div>
 
+    <!--LIST OF NAVBAR LINKS FOR MOBILE MODE-->
     <ul class="side-nav" id="mobile-demo">
         <li><a href='#modal' id="trigger2">About</a></li>
         <li><a>Signed in as {{currentUser._json.first_name}} {{currentUser._json.last_name}}</a></li>
     </ul>
 
+    <!--JUMBOTRON-->
     <div class="col s12 center" id="pageTop">
         <div class="card blue-grey darken-1" id="jumbotron">
             <div class="card-content white-text">
@@ -50,24 +73,38 @@
         </div>
     </div>
 
+    <!--POSTS SECTION-->
     <div class="container">
         <div class="row posts">
+            <!--EACH POST DISPLAYED AS A CARD-->
             {{#each posts as |post|}}
                 <div class="col s12 m6 xl4">
                     <div class="card">
                         <div class="card-content">
-                        <span class="card-title activator">
-                            <i class="fa fa-ellipsis-v right activator" aria-hidden="true"></i>
-                            <img height="32px" width="32px" src="http://www.nsit.ac.in/static/images/societies/CSI.jpg">
-                            {{post.story}}
-                        </span>
+                            <!--PART OF CARD WHICH TRIGGERS SHOWING FULL CONTENT-->
+                            <span class="card-title activator">
+                                <!--EXPAND ICON-->
+                                <i class="fa fa-ellipsis-v right activator" aria-hidden="true"></i>
+
+                                <!--CSI NSIT ICON-->
+                                <img height="32px" width="32px" src="http://www.nsit.ac.in/static/images/societies/CSI.jpg">
+
+                                <!--TITLE OF POST-->
+                                {{post.story}}
+                            </span>
+
+                            <!--CONTENT OF POST-->
                             <p>{{post.content}}</p>
                         </div>
+
+                        <!--STATS OF POST-->
                         <div class="card-action">
                             <a href="#">Likes: {{post.likes}}</a>
                             <a href="#">Shares: {{post.shares}}</a>
                             <a href="#">{{post.created}}</a>
                         </div>
+
+                        <!--FULL CONTENT WHICH IS REVEALED WHEN CLICKED ON EXPAND ICON-->
                         <div class="card-reveal">
                             <span class="card-title grey-text text-darken-4">{{post.story}}<i class="fa fa-times right" aria-hidden="true"></i></span>
                             <p>{{post.content}}</p>
@@ -79,6 +116,7 @@
     </div>
 </div>
 
+<!--INFO MODAL TRIGGERED WHEN CLICKED ON ABOUT LINK IN NAVBAR-->
 <div id="modal" class="modal">
     <div class="modal-content">
         <h4 class="teal-text text-darken-2">About</h4>
@@ -98,14 +136,17 @@
     </div>
 </div>
 
+<!--FOOTER-->
 <footer class="page-footer teal">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
+                <!--INFO-->
                 <h5 class="white-text">FBfetch</h5>
                 <p class="grey-text text-lighten-4">App to fetch posts from CSI NSIT Facebook page</p>
             </div>
             <div class="col l4 offset-l2 s12">
+                <!--SHORTCUT LINKS-->
                 <h5 class="white-text">Links</h5>
                 <ul>
                     <li><a class="grey-text text-lighten-3" href="auth/facebook/logout">Logout</a></li>
@@ -125,28 +166,21 @@
     </div>
 </footer>
 
-<div id="animation">
-    <div class="outer">
-        <div class="box s1"></div>
-        <div class="box s2"></div>
-        <div class="box s3"></div>
-        <div class="box s4"></div>
-        <div class="box s5"></div>
-        <div class="box s6"></div>
-        <div class="box s7"></div>
-        <div class="box s8"></div>
-        <div class="box s9"></div>
-    </div>
-</div>
-
 <script>
+    // SCRIPT FOR COLLAPSIBLE NAVBAR FOR MOBILE MODE
     $(".button-collapse").sideNav();
+
+    // SCRIPT FOR LINK FOR TRIGGERING INFO MODAL IN DESKTOP MODE
     $('#trigger').click(function () {
         $('#modal').modal();
     });
+
+    // SCRIPT FOR LINK FOR TRIGGERING INFO MODAL IN MOBILE MODE
     $('#trigger2').click(function () {
         $('#modal').modal();
     });
+
+    // SCRIPT FOR TRANSITION FROM END OF LOADING ANIMATION TO DISPLAYING PAGE
     window.onload = setTimeout(function() {
         document.getElementById("animation").remove();
         document.querySelector("#box2").classList.add("animate");
