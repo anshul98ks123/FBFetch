@@ -6,7 +6,6 @@ Fetches posts from csi nsit fb page and displays in order of likes and shares.
 ### Step-1
 In the directory of saved files, open terminal and run following commands: 
 ```
-npm init
 npm install
 ```
 
