@@ -24,8 +24,7 @@ Create your own mysql database and set its details in config.js file under DB ob
 ### Step 3
 Enter the following fields in config.js file
 1. CLIENT_ID (APP ID from facebook)
-2. CLIENT_SECRET (APP SECRET from facebook)
-3. EXPRESS_SECRET (express secret for express session)
+1. CLIENT_SECRET (APP SECRET from facebook)
 
 ### Step 4
 Run following command in your terminal in directory of saved files.
