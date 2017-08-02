@@ -25,12 +25,10 @@ Create your own mysql database and set its details in config.js file under DB ob
 1. Register an fb app ar https://developers.facebook.com.
 1. Go to the settings of your fb app.
 1. Click on 'Add Platform', and choose 'Website' option.
-1. Now enter the following link in the site URL input under website section of settings page.
+1. Now enter the following link in the site URL input under website section of settings page and save changes.
 ```
 http://localhost:8000/
 ```
-1. Save Changes.
-
 Now enter the following fields in config.js file
 
 1. CLIENT_ID (APP ID from facebook)
