@@ -30,7 +30,9 @@ Create your own mysql database and set its details in config.js file under DB ob
 http://localhost:8000/
 ```
 1. Save Changes.
+
 Now enter the following fields in config.js file
+
 1. CLIENT_ID (APP ID from facebook)
 1. CLIENT_SECRET (APP SECRET from facebook) ( with quotes )
 
