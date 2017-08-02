@@ -22,10 +22,10 @@ flush privileges;
 Create your own mysql database and set its details in config.js file under DB object
 
 ### Step 3
-1. Register an fb app ar https://developers.facebook.com.
+1. Register an fb app at https://developers.facebook.com.
 1. Go to the settings of your fb app.
 1. Click on 'Add Platform', and choose 'Website' option.
-1. Now enter the following link in the site URL input under website section of settings page and save changes.
+1. Now enter the following link in the site URL input under website section and save changes.
 ```
 http://localhost:8000/
 ```
