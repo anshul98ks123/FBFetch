@@ -4,7 +4,7 @@ Fetches posts from csi nsit fb page and displays in order of likes and shares.
 ## Setting Up The App
 
 ### Step-1
-In the directory of saved files, open terminal and run following commands: 
+In the directory of saved files, open terminal, cd into that directory, and run following commands: 
 ```
 npm install
 ```
@@ -27,7 +27,7 @@ Enter the following fields in config.js file
 1. CLIENT_SECRET (APP SECRET from facebook)
 
 ### Step 4
-Run following command in your terminal in directory of saved files.
+In the directory of saved files, open terminal, cd into that directory, and run following command: 
 ```
 node app.js
 ```
