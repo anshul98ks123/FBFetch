@@ -1,0 +1,82 @@
+<html>
+<head>
+	<title>TimeUp</title>
+    
+    <link rel="stylesheet" type="text/css" href="index_style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:900" rel="stylesheet">
+
+</head>
+<body>
+    <div id="cover_page">
+        <div id="left">
+            <h1 id="time">E x p e n s o</h1>
+            <p>The page you wish to start your day with,</p>
+            <h1 id="every">EVERYDAY</h1>
+            <input type = "text" placeholder="Your full name" id="newuser">
+            <!--<input type = "password" placeholder="Password" id="newuserpass">-->
+            <button id="started">Get Started</button>
+            <p><br>The trouble with being punctual is that nobody's there to appreciate it.</p>
+        </div>
+     </div>
+    <p id="invalid">Invalid username / password ! </p>
+    <!--<script>
+        var x = JSON.parse(localStorage.getItem("current_user"));
+        if(x !== null)
+        {
+            window.location = './home.html';
+            $.get('/setuser?name='+x , function() {
+                console.log("username updated");
+            });
+
+            $.get('/pointexists?name='+x, function (data) {
+                console.log(data);
+            });
+            //document.getElementById('started').click();
+        }
+    </script>
+    -->
+    <div id="info">
+        <h1>Why you'll love TimeUp.</h1>
+        <p>The more you do with TimeUp, the more you'll wonder how you ever did without it.</p>
+        <div id="band">
+            <center>
+            <div class = "card">
+                <img src="simple.png">
+                <h3>Simple</h3>
+                <p>TimeUp is packed with amazing features and capabilities but its drop-dead simple to use.</p>
+            </div>
+            <div class = "card">
+                <img src="personalised.png">
+                <h3>Notes + Links</h3>
+                <p>
+                    Use Timebrige to add notes or comments and attach files using a custom link to link your Google Drive.
+                </p>
+            </div>
+            
+            <div class = "card">
+                <img src="easy.png">
+                <h3>Easy</h3>
+                <p>TimeUp removes the clutter and distractions and paves a path straight to better productivity</p>
+            </div>
+            
+            </center>
+        </div>
+    </div>
+    
+    <div id="pro">
+    <h2><br>There's More. PRO Feature.<br>For Free !</h2>
+        <div id="pro_box">
+            <h2>Meetings Made Easy</h2>
+               <ul style="text-align : left"> 
+                    <li>Create Invite to any meeting within 42 seconds.</li>
+                    <li>Generates Online Code Sharing session automatically for you.</li>
+                    <li>Links Google Maps for offline meetings.</li>
+                </ul>
+            <button>Get Started</button>
+        </div>
+    </div>
+</body>
+<!--<script src="jquery.js"></script>
+<script src="index.js"></script>-->
+</html>
